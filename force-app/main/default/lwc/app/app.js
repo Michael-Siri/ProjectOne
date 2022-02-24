@@ -1,4 +1,4 @@
-import { LightningElement, track, wire } from 'lwc';
+import { LightningElement, track, wire, api } from 'lwc';
 import getSomething from '@salesforce/apex/Login.getSomething';
 import insertLeadFromSignUp from '@salesforce/apex/insertLeadFromSignUp.insertLeadFromSignUp'
 import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
@@ -11,6 +11,7 @@ export default class App extends LightningElement {
     searchStringPassword = '';
     username = '';
     email = '';
+    loginemail = 'michaelksbookdesign@gmail.com';
 
     //Responsive Variables/Objectf
     @track page = {
