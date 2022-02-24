@@ -1,0 +1,110 @@
+<!-- 
+    Written by: Whitney Dwire
+    Styled by: David Labib
+
+    Describtion: This html code will display the user 3 things
+    1. email form to get their email to reset their password
+    2. error and/or success messages to show if it worked or not
+    3. password form to reset their password
+-->
+
+
+
+
+<!-- Simple toast to show the result when the submit -->
+<template>
+    <template if:true={resultcheck}>
+        <div style = "padding-top: 42.5px; padding-bottom:42.5px;" >
+            <div class="slds-grid slds-grid_align-center slds-grid--vertical-stretch">
+                <div class="slds-col slds-size_1-of-6">
+                    <div class="formCard" style="text-align: center; font-size: 25px;">
+                        <div class = "form-title">
+                            <h1>{result}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+<!-- The email form: this is what the user will see if they dont have token in the url
+    all they have to do is enter their email-->
+    <template if:true={form}>
+        <div style = "padding-top: 42.5px; padding-bottom:42.5px;" >
+            <div class="slds-grid slds-grid_align-center slds-grid--vertical-stretch">
+                <div class="slds-col slds-size_1-of-6">
+                    <div class="formCard">
+
+                        <div class = "form-title">
+                            <h2>
+                                Forgot your password?
+                            </h2>
+                            <div>
+                                Enter your email now to reset it!
+                            </div>
+                        </div>
+            
+                        <form action="">
+                            <div class="form-1">
+                                <label>Email</label>
+                                <input onchange={handleClick} type="email" id="email" name="email" placeholder="...">
+                            </div>
+                            <br>
+                            <div class="buttons">
+                                <input class="submitButton" onclick={handleClick} type="submit" name="form">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+<!-- Password form: this is the form the user will see if they have token in the url
+     This form will take in their new password, twice, to make sure its entered correctly -->
+    <template if:true={resetpass}>
+        <div style = "padding-top: 42.5px; padding-bottom:42.5px;" >
+            <div class="slds-grid slds-grid_align-center slds-grid--vertical-stretch">
+                <div class="slds-col slds-size_1-of-6">
+                    <div class="formCard">
+
+                        <div class = "form-title">
+                            <h2>
+                                Enter your new password
+                            </h2>
+                        </div>
+            
+                        <form action="">
+                            <div class="form-1">
+                                <label>New Password</label>
+                                <input onchange={handleClick} type="password" name="password">
+                            </div>
+                            <br>
+                            <div class="form-1">
+                                <label>Repeat New Password</label>
+                                <input onchange={handleClick} type="password" name="repeatpassword">
+                            </div>
+                            <br>
+                            <div class="buttons">
+                                <input class="submitButton" onclick={handleClick} type="submit" name="reset">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+<!---
+    <template if:true={resetpass}>
+        <form action="">
+            <input onchange={handleClick} type="password" name="password">
+            <br>
+            <input onchange={handleClick} type="password" name="repeatpassword">
+
+            <input onclick={handleClick} type="submit" name="reset">
+        </form>
+    </template>
+-->
+</template>

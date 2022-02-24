@@ -1,22 +1,17 @@
 <template>
     <c-nav onmenuchange={handlemenu}></c-nav>
 
-
-    <template if:true={cons.data}>
-        <template for:each={cons.data} for:item="contact">
-            <p key={contact.Id}>{contact.Name}</p>
-        </template>
-    </template>
-    <template if:true={cons.error}>
-        
-    </template>
-
     <template if:true={page.homePage}>
         <c-home onmenuchange={handlemenu}></c-home>
     </template>
-
+<!--
     <template  if:true={page.aboutPage}>
         <c-about></c-about>
+    </template>
+-->
+
+    <template if:true={page.resetPassPage}>
+        <c-forgotpass onmenuchange={handlemenu}></c-forgotpass>
     </template>
 
     <template if:true={page.loginPage}>
