@@ -1,6 +1,6 @@
 public with sharing class updateLeadFromLogin {
     @AuraEnabled
-    public static void updateLeadFromLogin(String email, String password) {
+    public static boolean updateLeadFromLogin(String email, String password) {
 
         //Creates a new lead
         Lead a  = new Lead();
@@ -12,18 +12,20 @@ public with sharing class updateLeadFromLogin {
 
         try{
             if(listOfLeads.size() == 1){
-                System.debug('yes');
-                System.debug(password + '0');
-                System.debug(listOfLeads[0].Password__c + '1');
-                if(password == listOfLeads[0].Password__c)
-                System.debug('true');
+                if(password == listOfLeads[0].Password__c){
+                listOfLeads[0].loggedin__c = true;
+                update listOfLEads;
+                return true;
+                }
                 else{
                     System.debug('false');
+                    return false;
                 }
             }
         }
         catch(DmlException e) {
         System.debug('An unexpected error has occurred: ' + e.getMessage());
     }
+    return false;
 }
 }

@@ -20,7 +20,7 @@
     </template>
 
     <template if:true={page.loginPage}>
-        <c-login onmenuchange={handlemenu}></c-login>
+        <c-login onmenuchange={handlemenu} onchangetoemail={changetoemail} loginemail={loginemail}></c-login>
     </template>
 
     <template if:true={page.signupPage}>

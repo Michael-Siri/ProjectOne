@@ -25,6 +25,12 @@ export default class App extends LightningElement {
     @wire(getSomething, {query: '$searchStringEmail', query2: '$searchStringPassword'})
     cons;
 
+
+    changetoemail(e){
+        console.log(e.detail);
+        this.loginemail = e.detail;
+        
+    }
     //Connected to handle button clicks from child
     handlemenu(e)
     {
