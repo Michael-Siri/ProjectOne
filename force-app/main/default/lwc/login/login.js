@@ -1,5 +1,6 @@
 import {LightningElement, track, api} from 'lwc';
 import updateLeadFromLogin from '@salesforce/apex/updateLeadFromLogin.updateLeadFromLogin';
+import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
 
 export default class login extends LightningElement{
 
@@ -30,8 +31,12 @@ export default class login extends LightningElement{
         updateLeadFromLogin({ email: this.email, password: this.password })
         .then((result) => {
             this.cookie = result;
-            if(this.cookie = true)
+            console.log(result);
+            if(this.cookie == true)
+            {
             this.dispatchEvent(new CustomEvent('changetoemail', {detail : this.email}));
+            }
+            this.cookie =false;
             this.error = undefined;
         })
         .catch((error) => {
