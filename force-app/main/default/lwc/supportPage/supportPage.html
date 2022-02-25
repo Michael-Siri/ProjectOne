@@ -1,0 +1,40 @@
+<template>
+
+<!--<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">-->
+
+    <!--<div>-->
+    
+    <!--<<input type=hidden name="orgid" value="00D8c000004f5Uf">-->
+    <!--<input type=hidden name="retURL" value="">-->
+    
+
+   
+    <label for="name">Contact Name</label><input  maxlength="80" name="name" size="20" type="text" onchange={handleNameChange}/><br>
+    
+    <label for="email">Email</label><input  maxlength="80" name="email" size="20" type="text" onchange={handleEmailChange}/><br>
+    
+    <label for="phone">Phone</label><input  maxlength="40" name="phone" size="20" type="text" onchange={handlePhoneChange}/><br>
+    
+    <label for="subject">Subject</label><input  maxlength="80" name="subject" size="20" type="text" onchange={handleSubjectChange}/><br>
+    
+    <label for="description">Description</label><textarea name="description" onchange={handleDescriptionChange}></textarea><br>
+    
+    <button type="submit" name="submit" onclick={clickedsubmit}>Submit</button>
+    
+    </div>
+
+<!--
+    <lightning-card title="Case Record Create Form" icon-name="standard:case">
+        <div class="slds-var-p-around_x-small">
+            <lightning-input value={recCase.Name} label="Name" onchange={handleNameChange}></lightning-input>
+            <lightning-input value={recCase.Email} label="Email" onchange={handleEmailChange}></lightning-input>
+            <lightning-input value={recCase.Phone} label="Phone" onchange={handlePhoneChange}></lightning-input>
+            <lightning-input value={recCase.Subject} label="Subject" onchange={handleSubjectChange}></lightning-input>
+            <lightning-input value={recCase.Description} label="Description" onchange={handleDiscriptionChange}></lightning-input>
+        
+            <br/>
+            <lightning-button label="Save Case Rec" onclick={createCaseRec} variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+    -->
+</template>

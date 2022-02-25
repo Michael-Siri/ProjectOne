@@ -31,7 +31,7 @@ trigger PasswordResetTrigger on Lead (before update) {
             //setting the subject and body of the email
             mail.setSubject('Reset Your Password');
             
-            String body = 'Dear ' + led.FirstName + ', Here is the link to reset your password: https://galeforcelol-developer-edition.na213.force.com/s/#/?token=' + led.Password_Reset_Token__c;
+            String body = 'Dear ' + led.FirstName + ', Here is the link to reset your password: https://michaelaccessories-developer-edition.na213.force.com/s/?token=' + led.Password_Reset_Token__c;
 			mail.setHtmlBody(body);
             
             //sends the email

@@ -1,4 +1,5 @@
 import {LightningElement, track} from 'lwc';
+import signupURL from '@salesforce/resourceUrl/signup';
 
 export default class signup extends LightningElement{
 
@@ -6,6 +7,8 @@ export default class signup extends LightningElement{
     //Variables
     @track email;
     @track password;
+
+    signupLink=  `${signupURL}#signup`
 
     //Send custom event on button click/sign up
     handleMenu(e){

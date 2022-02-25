@@ -21,7 +21,7 @@ export default class App extends LightningElement {
         loginPage:false,
         signupPage:false,
         resetPassPage: false,
-        shopPage: false
+        storePage: false
     }
 
 

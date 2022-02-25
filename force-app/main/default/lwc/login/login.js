@@ -1,6 +1,8 @@
 import {LightningElement, track, api} from 'lwc';
 import updateLeadFromLogin from '@salesforce/apex/updateLeadFromLogin.updateLeadFromLogin';
 import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
+import welcomeLink from '@salesforce/resourceUrl/welcome';
+
 
 export default class login extends LightningElement{
 
@@ -9,6 +11,8 @@ export default class login extends LightningElement{
     @track cookie;
     @track error;
     @api loginemail;
+
+    welcomeUrl=  `${welcomeLink}#welcome`
 
     handleMenu(e){
         this.dispatchEvent(new CustomEvent('menuchange', {detail : e.target.title}));
