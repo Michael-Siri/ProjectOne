@@ -11,7 +11,7 @@ export default class App extends LightningElement {
     searchStringPassword = '';
     username = '';
     email = '';
-    loginemail = 'michaelksbookdesign@gmail.com';
+    loginemail = 'Anonymous';
 
 
 

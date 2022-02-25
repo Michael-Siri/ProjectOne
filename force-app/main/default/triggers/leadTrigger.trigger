@@ -1,4 +1,5 @@
 trigger leadTrigger on Lead (after insert) {
+    
     //Creates a list of emails to send
 	List<Messaging.SingleEmailMessage> mails = new List<Messaging.SingleEmailMessage>();
 	List<String> sendTo = new List<String>();
@@ -18,4 +19,5 @@ trigger leadTrigger on Lead (after insert) {
     
     //Sends the emails, in this case one to michaelksbookdesign@gmail.com
     Messaging.sendEmail(mails);
+    
 }

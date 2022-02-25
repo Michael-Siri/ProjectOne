@@ -1,6 +1,8 @@
 <template>
     <c-nav loginemail={loginemail} onmenuchange={handlemenu}></c-nav>
 
+    <div style="background-color: pink;">
+
     <template if:true={page.homePage}>
         <c-home onmenuchange={handlemenu}></c-home>
     </template>
@@ -27,7 +29,8 @@
     <template if:true={page.signupPage}>
         <c-signup onmenuchange={handlemenu}></c-signup>
     </template>
-
+    
+    </div>
     <div style = "height: 0px"></div>
     <c-footer></c-footer>
 </template>

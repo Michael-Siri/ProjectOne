@@ -47,3 +47,6 @@
     padding-right:.5vw;
     cursor: pointer;
 }
+ul div{
+    display: inline;
+}
