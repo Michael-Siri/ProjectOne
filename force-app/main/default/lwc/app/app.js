@@ -1,3 +1,4 @@
+
 import { LightningElement, track, wire, api } from 'lwc';
 import getSomething from '@salesforce/apex/Login.getSomething';
 import insertLeadFromSignUp from '@salesforce/apex/insertLeadFromSignUp.insertLeadFromSignUp'
@@ -13,13 +14,16 @@ export default class App extends LightningElement {
     email = '';
     loginemail = 'michaelksbookdesign@gmail.com';
 
-    //Responsive Variables/Objectf
+
+
     @track page = {
         homePage: true,
         aboutPage: false,
         loginPage:false,
-        signupPage:false
+        signupPage:false,
+        resetPassPage: false
     }
+
 
     //Connections to Apex Classes
     @wire(getSomething, {query: '$searchStringEmail', query2: '$searchStringPassword'})
@@ -40,30 +44,38 @@ export default class App extends LightningElement {
                 this.page.aboutPage=false;
                 this.page.loginPage=false;
                 this.page.signupPage=false;
+                this.page.resetPassPage=false;
                 break;
             case "About":
                 this.page.homePage=false;
                 this.page.aboutPage=true;
                 this.page.loginPage=false;
                 this.page.signupPage=false;
+                this.page.resetPassPage=false;
                 break;
             case "Login":
                 this.page.homePage=false;
                 this.page.aboutPage=false;
                 this.page.loginPage=true;
                 this.page.signupPage=false;
+                this.page.resetPassPage=false;
                 break;
             case "Signup":
                 this.page.homePage=false;
                 this.page.aboutPage=false;
                 this.page.loginPage=false;
                 this.page.signupPage=true;
+                this.page.resetPassPage=false;
                 break;
-
-
+            case "ForgotPassword":
+                this.page.homePage=false;
+                this.page.aboutPage=false;
+                this.page.loginPage=false;
+                this.page.signupPage=false;
+                this.page.resetPassPage=true;
+                break;
         }
-        //When Recieving an object through custom events
-        if(e.detail.detail == "ActualSignUp")
+      if(e.detail.detail == "ActualSignUp")
         {
             
             this.searchStringEmail = e.detail.email;
@@ -81,6 +93,17 @@ export default class App extends LightningElement {
             // console.log(e.detail.email);
         }   
 
+    }
+
+    //David
+    //If the token is set in the URL
+    //it will display the reset password page form directly
+    connectedCallback() {
+        if(window.location.href.includes("token")){
+            this.page.homePage=false;
+            this.page.resetPassPage=true;
+
+        }
     }
 
 }

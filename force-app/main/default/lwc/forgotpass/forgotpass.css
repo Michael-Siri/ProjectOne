@@ -1,0 +1,79 @@
+/*******************
+David and Whitney
+
+Similar CSS code to the login and signup form
+For uniform styling
+*******************/
+
+.form-title{
+    padding: 1rem;
+}
+
+.form-title h2{
+    font-size:20px;
+    font-weight:bold;
+    padding-left: 0;
+
+}
+.form-title h1{
+    font-weight:bold;
+    padding-left: 0;
+
+}
+.form-1{
+    position:relative;
+    padding:.5rem;
+}
+
+.form-1 label{
+    display: inline-block;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.form-1 input{
+    margin-top: 5px;
+    display:block;
+    padding: 10px;
+    border-radius: 10px ;
+    width:100%;
+}
+
+.formCard{
+    background-color: white;
+    margin:20px;
+    margin-left: -100px;
+    width: 475px;   
+    height: auto;
+    box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding:20px;
+    font-family:'Poppins', sans-serif;
+
+}
+
+
+.buttons{
+    display:flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    font-size:16px;
+    margin-top:2rem;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+
+
+.submitButton{
+    font-weight: 700;
+    border: 2px solid #000;
+    border-radius: 3rem;
+    overflow: hidden;
+    color: #fff;
+    pointer-events: auto;
+    cursor: pointer;
+    background: rgb(255, 102, 128);
+    border: none;
+    padding: 1rem 4rem;
+}
