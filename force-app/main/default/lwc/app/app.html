@@ -13,6 +13,9 @@
     <template if:true={page.resetPassPage}>
         <c-forgotpass onmenuchange={handlemenu}></c-forgotpass>
     </template>
+    <template if:true={page.shopPage}>
+        <c-shop onmenuchange={handlemenu}></c-shop>
+    </template>
 
     <template if:true={page.loginPage}>
         <c-login onmenuchange={handlemenu} onchangetoemail={changetoemail} loginemail={loginemail}></c-login>

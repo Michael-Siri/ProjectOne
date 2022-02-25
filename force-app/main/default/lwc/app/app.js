@@ -1,4 +1,3 @@
-
 import { LightningElement, track, wire, api } from 'lwc';
 import getSomething from '@salesforce/apex/Login.getSomething';
 import insertLeadFromSignUp from '@salesforce/apex/insertLeadFromSignUp.insertLeadFromSignUp'
@@ -21,7 +20,8 @@ export default class App extends LightningElement {
         aboutPage: false,
         loginPage:false,
         signupPage:false,
-        resetPassPage: false
+        resetPassPage: false,
+        shopPage: false
     }
 
 
@@ -45,6 +45,7 @@ export default class App extends LightningElement {
                 this.page.loginPage=false;
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
+                this.page.storePage=false;
                 break;
             case "About":
                 this.page.homePage=false;
@@ -52,6 +53,7 @@ export default class App extends LightningElement {
                 this.page.loginPage=false;
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
+                this.page.storePage=false;
                 break;
             case "Login":
                 this.page.homePage=false;
@@ -59,6 +61,7 @@ export default class App extends LightningElement {
                 this.page.loginPage=true;
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
+                this.page.storePage=false;
                 break;
             case "Signup":
                 this.page.homePage=false;
@@ -66,6 +69,7 @@ export default class App extends LightningElement {
                 this.page.loginPage=false;
                 this.page.signupPage=true;
                 this.page.resetPassPage=false;
+                this.page.storePage=false;
                 break;
             case "ForgotPassword":
                 this.page.homePage=false;
@@ -73,6 +77,15 @@ export default class App extends LightningElement {
                 this.page.loginPage=false;
                 this.page.signupPage=false;
                 this.page.resetPassPage=true;
+                this.page.storePage=false;
+                break;
+            case "Shop":
+                this.page.homePage=false;
+                this.page.aboutPage=false;
+                this.page.loginPage=false;
+                this.page.signupPage=false;
+                this.page.resetPassPage=false;
+                this.page.storePage=true;
                 break;
         }
       if(e.detail.detail == "ActualSignUp")
@@ -92,7 +105,6 @@ export default class App extends LightningElement {
             // console.log(e.detail.password);
             // console.log(e.detail.email);
         }   
-
     }
 
     //David
