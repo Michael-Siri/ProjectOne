@@ -21,7 +21,8 @@ export default class App extends LightningElement {
         loginPage:false,
         signupPage:false,
         resetPassPage: false,
-        storePage: false
+        storePage: false,
+        supportPage: false
     }
 
 
@@ -46,6 +47,7 @@ export default class App extends LightningElement {
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
                 this.page.storePage=false;
+                this.page.supportPage=false;
                 break;
             case "About":
                 this.page.homePage=false;
@@ -54,6 +56,7 @@ export default class App extends LightningElement {
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
                 this.page.storePage=false;
+                this.page.supportPage=false;
                 break;
             case "Login":
                 this.page.homePage=false;
@@ -62,6 +65,7 @@ export default class App extends LightningElement {
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
                 this.page.storePage=false;
+                this.page.supportPage=false;
                 break;
             case "Signup":
                 this.page.homePage=false;
@@ -70,6 +74,7 @@ export default class App extends LightningElement {
                 this.page.signupPage=true;
                 this.page.resetPassPage=false;
                 this.page.storePage=false;
+                this.page.supportPage=false;
                 break;
             case "ForgotPassword":
                 this.page.homePage=false;
@@ -78,6 +83,7 @@ export default class App extends LightningElement {
                 this.page.signupPage=false;
                 this.page.resetPassPage=true;
                 this.page.storePage=false;
+                this.page.supportPage=false;
                 break;
             case "Shop":
                 this.page.homePage=false;
@@ -86,6 +92,16 @@ export default class App extends LightningElement {
                 this.page.signupPage=false;
                 this.page.resetPassPage=false;
                 this.page.storePage=true;
+                this.page.supportPage=false;
+                break;
+            case "Support":
+                this.page.homePage=false;
+                this.page.aboutPage=false;
+                this.page.loginPage=false;
+                this.page.signupPage=false;
+                this.page.resetPassPage=false;
+                this.page.storePage=false;
+                this.page.supportPage=true;
                 break;
         }
       if(e.detail.detail == "ActualSignUp")

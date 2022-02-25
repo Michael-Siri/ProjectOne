@@ -16,6 +16,9 @@
     <template if:true={page.storePage}>
         <c-shop onmenuchange={handlemenu}></c-shop>
     </template>
+    <template if:true={page.supportPage}>
+        <c-support-page onmenuchange={handlemenu}></c-support-page>
+    </template>
 
     <template if:true={page.loginPage}>
         <c-login onmenuchange={handlemenu} onchangetoemail={changetoemail} loginemail={loginemail}></c-login>
