@@ -1,6 +1,18 @@
-import { LightningElement, track } from 'lwc';
+
+import { LightningElement, track, wire, api } from 'lwc';
+import getSomething from '@salesforce/apex/Login.getSomething';
+import insertLeadFromSignUp from '@salesforce/apex/insertLeadFromSignUp.insertLeadFromSignUp'
+import SystemModstamp from '@salesforce/schema/Account.SystemModstamp';
+
 
 export default class App extends LightningElement {
+
+    //Initialize Variables
+    searchStringEmail = '';
+    searchStringPassword = '';
+    username = '';
+    email = '';
+    loginemail = 'michaelksbookdesign@gmail.com';
 
 
 
@@ -12,6 +24,18 @@ export default class App extends LightningElement {
         resetPassPage: false
     }
 
+
+    //Connections to Apex Classes
+    @wire(getSomething, {query: '$searchStringEmail', query2: '$searchStringPassword'})
+    cons;
+
+
+    changetoemail(e){
+        console.log(e.detail);
+        this.loginemail = e.detail;
+        
+    }
+    //Connected to handle button clicks from child
     handlemenu(e)
     {
         switch(e.detail){
@@ -51,6 +75,23 @@ export default class App extends LightningElement {
                 this.page.resetPassPage=true;
                 break;
         }
+      if(e.detail.detail == "ActualSignUp")
+        {
+            
+            this.searchStringEmail = e.detail.email;
+            this.searchStringPassword = e.detail.password;
+            insertLeadFromSignUp({ email: e.detail.email, password: e.detail.password })
+            .then((result) => {
+                this.contacts = result;
+                this.error = undefined;
+            })
+            .catch((error) => {
+                this.error = error;
+                this.contacts = undefined;
+            });
+            // console.log(e.detail.password);
+            // console.log(e.detail.email);
+        }   
 
     }
 

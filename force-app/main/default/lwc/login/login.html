@@ -1,54 +1,54 @@
 <template>
 
 
-    <div style="padding-top: 42.5px; padding-bottom:42.5px;">
-        <div class="slds-grid slds-grid_align-center slds-grid--vertical-stretch">
-            <div class="slds-col slds-size_1-of-6">
-                <div class="loginImage">
+    <div style = "padding-top: 42.5px; padding-bottom:42.5px;" >
+    <div class="slds-grid slds-grid_align-center slds-grid--vertical-stretch">
+        <div class="slds-col slds-size_1-of-6">
+            <div class = "loginImage">
 
-
-                    <img aria-label="Cute Welcome cat Image" src="./resources/welcome.svg">
-                </div>
-            </div>
-            <div class="slds-col slds-size_1-of-6">
-
-            </div>
-            <div class="slds-col slds-size_1-of-6">
-
-                <div class="loginCard">
-
-                    <div class="form-title">
-                        <h2>
-                            Login, <span style="color:rgb(255, 19, 58)">Welcome!</span>
-                        </h2>
-                        <div>
-                            Hey! We missed you from last time! Hope you have an amazing visit!
-                        </div>
-                    </div>
-
-                    <div class=form-1>
-                        <label>Username*</label>
-                        <input type="text" placeholder="...">
-                    </div>
-
-
-                    <div class=form-1>
-                        <label>Password*</label>
-                        <input type="text" placeholder="...">
-                    </div>
-
-                    <div class="buttons">
-                        <button onclick={handleMenu} class="signUpButton button-56" title="Signup">Sign up!</button>
-                        <button onclick={handleMenu} class="loginButton" title="Login">Login</button>
-                    </div>
-                    <div style="padding-top:20px; text-align:center;">
-                        <a style="font-size: 16px;" tabindex="0">Forgot your password? Click here to reset it! </a>
-                    </div>
-
-                </div>
-
+            
+          <img aria-label="Cute Welcome cat Image" src = "./resources/welcome.svg">
             </div>
         </div>
+        <div class="slds-col slds-size_1-of-6">
+          
+        </div>
+        <div class="slds-col slds-size_1-of-6">
+
+            <div class = "loginCard">
+
+            <div class = "form-title">
+                <h2>
+                    Login, <span style = "color:rgb(255, 19, 58)">Welcome!</span>
+                </h2>
+                <div>
+                    Hey! We missed you from last time! Hope you have an amazing visit!
+                </div>
+            </div>
+
+            <div class = form-1>
+                <label>Username*</label>
+                <input type = "text" placeholder="..." name = "user">
+            </div>
+
+
+            <div class = form-1>
+                <label>Password*</label>
+                <input type = "text" placeholder="..." name = "pass">
+            </div>
+
+            <div class = "buttons">
+                <button onclick={handleMenu} class = "signUpButton button-56" title ="Signup">Sign up!</button>
+                <button onclick={handleMenu1} class = "loginButton" title="Login">Login</button>
+            </div>
+            <div style = "padding-top:20px; text-align:center;">
+                <a style = "font-size: 16px;" tabindex="0">Forgot your password? Click here to reset it! </a>
+            </div>
+
+            </div>
+
+        </div>
+      </div>
     </div>
 
 </template>

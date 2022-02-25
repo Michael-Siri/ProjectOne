@@ -1,5 +1,5 @@
 <template>
-    <c-nav onmenuchange={handlemenu}></c-nav>
+    <c-nav loginemail={loginemail} onmenuchange={handlemenu}></c-nav>
 
     <template if:true={page.homePage}>
         <c-home onmenuchange={handlemenu}></c-home>
@@ -15,7 +15,7 @@
     </template>
 
     <template if:true={page.loginPage}>
-        <c-login onmenuchange={handlemenu}></c-login>
+        <c-login onmenuchange={handlemenu} onchangetoemail={changetoemail} loginemail={loginemail}></c-login>
     </template>
 
     <template if:true={page.signupPage}>
